@@ -1,0 +1,478 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --main-padding: 50px;
+  --main-color: #fa694e;
+  --main-alt-color: #777;
+  --section-background: #fbfbfb;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+:focus {
+  outline: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Start Component */
+.main-heading {
+  text-align: center;
+}
+.main-heading > h3 {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+.main-heading > h3 + p {
+  margin: 0 0 100px;
+  font-size: 15px;
+  color: var(--main-alt-color);
+}
+/* End Component */
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container a img {
+  width: 180px;
+}
+header .container .links {
+  position: relative;
+}
+header .container .links .icon {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30px;
+  height: 30px;
+}
+header .container .links .icon span {
+  background-color: #1c3053;
+  margin-bottom: 5px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+header .container .links .icon span:first-of-type {
+  width: 100%;
+  height: 2px;
+}
+header .container .links .icon span:nth-child(2) {
+  width: 61%;
+  height: 2px;
+  background-color: #a4acba;
+}
+header .container .links .icon span:last-of-type {
+  width: 40%;
+  height: 2px;
+  display: block;
+}
+header .container .links:hover span:nth-child(2) {
+  margin-left: 39%;
+}
+header .container .links:hover span:last-of-type {
+  margin-left: 61%;
+}
+header .container .links ul {
+  position: absolute;
+  width: 200px;
+  right: -10px;
+  top: calc(100% + 10px);
+  background-color: #eee;
+  display: none;
+}
+header .container .links ul::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #eee transparent;
+}
+header .container .links:hover ul {
+  display: block;
+}
+header .container .links ul li:not(:last-child) {
+  border-bottom: 1px solid #ebebeb;
+}
+header .container .links ul li a {
+  display: block;
+  padding: 15px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+header .container .links ul li a:hover {
+  margin-left: 10px;
+}
+
+.landing {
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc;
+  position: relative;
+}
+.landing .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.landing .info h1 {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+.landing .info p {
+  font-size: 18px;
+}
+.landing .info a {
+  display: block;
+  padding: 10px 20px;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 5px;
+  font-size: 17px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.services {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.services .container .box {
+  text-align: center;
+}
+.services .container .box i {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+.services .container .box:first-child i {
+  background-color: var(--main-color);
+  color: white;
+}
+.services .container .box:not(:first-child) i {
+  border: 1px solid #ddd;
+  color: var(--main-color);
+}
+.services .container .box .info h3 {
+  margin: 0 0 20px;
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  font-size: 20px;
+}
+.services .container .box .info p {
+  font-size: 15px;
+  margin: 0;
+  color: var(--main-alt-color);
+}
+
+.stories {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  background-color: var(--section-background);
+}
+.stories .container .content .project {
+  display: flex;
+  height: 320px;
+  margin-bottom: 60px;
+}
+.stories .container .content .project .image img {
+  width: 100%;
+  height: 320px;
+}
+.stories .container .content .project .image,
+.stories .container .content .project .info {
+  flex: 1;
+}
+.stories .container .content .project .info {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #808080;
+  border-left-color: transparent;
+  max-width: 100%;
+  position: relative;
+}
+.stories .container .content .project .info::before {
+  cursor: pointer;
+  font-family: "Font Awesome 6 Free";
+  content: "\f057";
+  font-weight: 900;
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top: 10px;
+}
+@media (max-width: 992px) {
+  .stories .container .content .project {
+    flex-direction: column;
+    height: auto;
+  }
+  .stories .container .content .project .info {
+    order: -1;
+    border: none;
+    border: 1px solid #808080;
+    border-bottom-color: transparent;
+  }
+  .stories .container .content .project .image img {
+    height: auto;
+  }
+}
+.stories .container .content .project .info h3 {
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0 0 15px;
+}
+.stories .container .content .project .info p {
+  margin: 0 0 15px;
+  font-size: 15px;
+  color: var(--main-alt-color);
+}
+.stories .container .content .project .info a {
+  display: block;
+  padding: 10px 25px;
+  width: fit-content;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.stories .container .content .stories-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.stories .container .content .stories-content .box .image {
+  position: relative;
+}
+.stories .container .content .stories-content .box .image::before {
+  cursor: pointer;
+  font-family: "Font Awesome 6 Free";
+  content: "\f055";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 55px;
+  color: var(--main-color);
+  display: none;
+}
+.stories .container .content .stories-content .box:hover .image::before {
+  display: block;
+}
+.stories .container .content .stories-content .box .image img {
+  width: 100%;
+  border: 3px solid #e3e3e3;
+}
+
+.contact {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+.contact .container .content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contact .container .content form {
+  flex-basis: 70%;
+}
+@media (max-width: 767px) {
+  .contact .container .content form {
+    flex-basis: 100%;
+  }
+}
+.contact .container .content input,
+.contact .container .content textarea {
+  padding: 15px;
+  margin-bottom: 40px;
+  border: 1px solid #eee;
+}
+.contact .container .content input[type="email"],
+.contact .container .content input[type="text"]:first-child {
+  width: 49.7%;
+}
+@media (max-width: 992px) {
+  .contact .container .content input[type="email"],
+  .contact .container .content input[type="text"]:first-child {
+    width: 49.6%;
+  }
+}
+@media (max-width: 767px) {
+  .contact .container .content input[type="email"],
+  .contact .container .content input[type="text"]:first-child {
+    width: 49.5%;
+  }
+}
+@media (max-width: 576px) {
+  .contact .container .content input[type="email"],
+  .contact .container .content input[type="text"]:first-child {
+    width: 100%;
+  }
+}
+.contact .container .content input[type="email"] + input[type="text"],
+.contact .container .content textarea {
+  width: 100%;
+}
+.contact .container .content textarea {
+  height: 200px;
+}
+.contact .container .content input[type="submit"] {
+  width: 100%;
+  color: white;
+  background-color: var(--main-color);
+  font-size: 18px;
+  cursor: pointer;
+}
+.contact .container .content .info {
+  flex-basis: 20%;
+}
+@media (max-width: 767px) {
+  .contact .container .content .info {
+    order: -1;
+    text-align: center;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+}
+.contact .container .content .info h4 {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.contact .container .content .info address {
+  margin-bottom: 20px;
+}
+.contact .container .content .info address,
+.contact .container .content .info a,
+.contact .container .content .info span {
+  color: var(--main-alt-color);
+}
+.contact .container .content .info h4:last-of-type {
+  margin-top: 20px;
+}
+
+footer {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  background-color: #333333;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+footer .container p {
+  margin: 0;
+}
+@media (max-width: 767px) {
+  footer .container p {
+    font-size: 14px;
+  }
+}
+footer .container p span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+footer .container .sochil {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+}
+footer .container .sochil i {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+footer .top {
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color);
+  position: relative;
+}
+footer .top::before {
+  cursor: pointer;
+  font-family: "Font Awesome 6 Free";
+  content: "\f077";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  color: white;
+}
